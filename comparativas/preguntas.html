@@ -18,7 +18,6 @@
             height: 100vh;
             display: flex; flex-direction: column;
             overflow: hidden;
-            background-color: #f0f0f0;
         }
 
         /* --- HEADER --- */
@@ -106,40 +105,21 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: left;
             justify-content: center;
             padding: 40px;
             position: relative;
             background: white;
         }
 
+        .upper {
+            margin-top: -30%;
+        }
+
+        .split-section:first-child {
+            align-items: last baseline;
+        }
+
         .split-section:first-child { border-right: 2px solid #ddd; }
-
-        /* --- FOOTER (CÓDIGO) --- */
-        footer {
-            height: 25vh;
-            background-color: #1e1e1e;
-            display: flex;
-            border-top: 4px solid #333;
-        }
-
-        .code-editor-pane {
-            width: 50%;
-            padding: 0; 
-            color: #d4d4d4;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 1.3rem; 
-            overflow: auto;
-            scrollbar-width: none;
-        }
-        .code-editor-pane::-webkit-scrollbar { display: none; }
-
-        .static-code {
-            padding: 20px; 
-            white-space: pre-wrap;
-            min-height: 100%;
-            user-select: all; /* Permite copiar fácilmente el código si lo necesitas */
-        }
 
     </style>
 </head>
@@ -147,7 +127,7 @@
 
     <header>
 <!--- CAMBIAR ENLACE (PREVIO) -->
-        <a href="pagination.html" class="nav-btn">
+        <a href="plantilla.html" class="nav-btn">
             <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
         </a>
 
@@ -156,57 +136,34 @@
 
             <span class="side-title bs">Bootstrap</span>
 <!--- CAMBIAR TÍTULO -->
-                <h1 class="main-title">BOTONES</h1> 
             <span class="side-title tw">Tailwind</span>
         </div>
 
 <!--- CAMBIAR ENLACE (SIGUIENTE) -->
-        <a href="preguntas.html" class="nav-btn">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        <a href="index.html" class="nav-btn">
+            <svg viewBox="0 0 24 24"><path d="M10 9V5L3 12L10 19V14.9C15 14.9 18.5 16.5 21 20C20 15 17 10 10 9Z"></path></svg>
         </a>
     </header>
 
     <div class="main-content">
         <section class="split-section">
 <!--- CAMBIAR EXPLICACIÓN -->
-            <h3 class="display-4 fw-bold">
-                Índice
-            </h3>
-            <h4 class="h2 text-secondary mt-3">
-                Uno<br>Dos<br>Tres
-            </h4>
+            <div class="upper">
+                <h3 class="display-1 fw-bold">
+                ¿Alguna
+                </h3>
+            </div>
         </section>
 
         <section class="split-section">
 <!--- CAMBIAR EXPLICACIÓN -->
-            <h3 class="text-6xl font-extrabold tracking-tighter text-slate-800">
-                Construcción<br>desde cero
-            </h3>
-            <p class="text-2xl text-sky-500 font-medium mt-4">
-                Personalización total
-            </p>
+            <div class="upper">
+                <h3 class="text-7xl font-extrabold tracking-tighter text-slate-800">
+                pregunta?
+                </h3>
+            </div>
         </section>
     </div>
-
-    <footer>
-<!--- CAMBIAR CÓDIGO BT -->
-        <div class="code-editor-pane">
-            <div class="static-code">
-&lt;!-- El HTML es limpio --&gt;
-&lt;button class="btn btn-primary"&gt;
-  Enviar
-&lt;/button&gt;</div>
-        </div>
-
-<!--- CAMBIAR CÓDIGO TW -->
-        <div class="code-editor-pane" style="border-left: 1px solid #444;">
-            <div class="static-code">
-&lt;!-- Control total de estilos --&gt;
-&lt;button class="px-4 py-2 bg-blue-500 text-white rounded"&gt;
-  Enviar
-&lt;/button&gt;</div>
-        </div>
-    </footer>
 
 </body>
 </html>
