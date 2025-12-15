@@ -106,7 +106,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: left;
             justify-content: center;
             padding: 40px;
             position: relative;
@@ -114,18 +114,6 @@
         }
 
         .split-section:first-child { border-right: 2px solid #ddd; }
-
-        /* H3 Limpio de edición */
-        .slide-title {
-            font-size: 2.5rem; 
-            color: #333;
-            text-align: center;
-            margin: 0;
-            line-height: 1.2;
-            font-weight: 700;
-            text-decoration: none; /* Asegura que no haya subrayados */
-            border: none;
-        }
 
         /* --- FOOTER (CÓDIGO) --- */
         footer {
@@ -181,15 +169,22 @@
     <div class="main-content">
         <section class="split-section">
 <!--- CAMBIAR EXPLICACIÓN -->
-            <h1 class="slide-title">
-                Componentes<br>Predefinidos
-            </h1>
+            <h3 class="display-4 fw-bold">
+                Índice
+            </h3>
+            <h4 class="h2 text-secondary mt-3">
+                Uno<br>Dos<br>Tres
+            </h4>
         </section>
 
         <section class="split-section">
-            <h3 class="slide-title">
+<!--- CAMBIAR EXPLICACIÓN -->
+            <h3 class="text-6xl font-extrabold tracking-tighter text-slate-800">
                 Construcción<br>desde cero
             </h3>
+            <p class="text-2xl text-sky-500 font-medium mt-4">
+                Personalización total
+            </p>
         </section>
     </div>
 
