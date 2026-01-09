@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap vs Tailwind - Navbar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      important: '#preview-tw'
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <a href="pagination.html" class="nav-btn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+      </svg>
+    </a>
+
+    <div class="header-center">
+      <div class="vs-watermark">VS</div>
+      <span class="side-title bs">Bootstrap</span>
+      <h1 class="main-title">NAVBAR</h1>
+      <span class="side-title tw">Tailwind</span>
+    </div>
+
+    <a href="buttons.html" class="nav-btn" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+      </svg>
+    </a>
+  </header>
+
+  <div class="main-content">
+    <section class="split-section">
+      <div id="preview-bs" class="component-stage" style="transform:none; width:100%; justify-content:flex-start;"></div>
+      <h4 class="explanation">
+        Componente listo con <code>.navbar</code><br /> y <code>.collapse</code> (JS incluido)
+      </h4>
+    </section>
+
+    <section class="split-section">
+      <div id="preview-tw" class="component-stage" style="transform:none; width:100%; justify-content:flex-start;"></div>
+      <h4 class="explanation">
+        Construyes el layout con utilidades<br /> y controlas el toggle con JS
+      </h4>
+    </section>
+  </div>
+
+  <footer>
+    <div class="code-editor-pane">
+      <div id="code-bs" class="editable-code" contenteditable="true" spellcheck="false">
+        &lt;nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark rounded-3&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;a class=&quot;navbar-brand fw-bold&quot; href=&quot;#&quot;&gt;MiWeb&lt;/a&gt;
+
+        &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot;
+        data-bs-target=&quot;#navBS&quot; aria-controls=&quot;navBS&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle&quot;&gt;
+        &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+
+        &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navBS&quot;&gt;
+        &lt;ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link active&quot; href=&quot;#&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Docs&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;form class=&quot;d-flex&quot; role=&quot;search&quot;&gt;
+        &lt;input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;Buscar&quot;&gt;
+        &lt;button class=&quot;btn btn-outline-light&quot; type=&quot;submit&quot;&gt;OK&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/nav&gt;</div>
+    </div>
+
+    <div class="code-editor-pane" style="border-left: 1px solid #444;">
+      <div id="code-tw" class="editable-code" contenteditable="true" spellcheck="false">
+        &lt;nav class=&quot;w-full rounded-3 bg-slate-900 text-white&quot;&gt;
+        &lt;div class=&quot;mx-auto max-w-xl px-4 py-3&quot;&gt;
+        &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;font-extrabold tracking-tight text-lg&quot;&gt;MiWeb&lt;/a&gt;
+        &lt;button data-tw-toggle class=&quot;rounded-lg p-2 hover:bg-white/10 lg:hidden&quot; aria-label=&quot;Abrir&quot;&gt;☰&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div data-tw-menu class=&quot;hidden lg:flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mt-3 lg:mt-0&quot;&gt;
+        &lt;div class=&quot;flex flex-col lg:flex-row gap-1 lg:gap-2&quot;&gt;
+        &lt;a class=&quot;rounded px-3 py-2 hover:bg-white/10&quot; href=&quot;#&quot;&gt;Inicio&lt;/a&gt;
+        &lt;a class=&quot;rounded px-3 py-2 hover:bg-white/10&quot; href=&quot;#&quot;&gt;Docs&lt;/a&gt;
+        &lt;a class=&quot;rounded px-3 py-2 hover:bg-white/10&quot; href=&quot;#&quot;&gt;Contacto&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
+        &lt;input class=&quot;flex-1 lg:w-40 rounded-lg bg-white/10 px-3 py-2 text-sm outline-none placeholder:text-white/60 focus:ring-2 focus:ring-sky-400&quot;
+        placeholder=&quot;Buscar&quot;&gt;
+        &lt;button class=&quot;rounded-lg bg-sky-500 px-3 py-2 text-sm font-bold hover:bg-sky-600&quot;&gt;OK&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/nav&gt;</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    window.afterPreviewUpdate = function () {
+      const root = document.getElementById('preview-tw');
+      if (!root) return;
+
+      const btn = root.querySelector('[data-tw-toggle]');
+      const menu = root.querySelector('[data-tw-menu]');
+      if (!btn || !menu) return;
+
+      btn.onclick = () => {
+        const hidden = menu.classList.contains('hidden');
+        if (hidden) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+        }
+      };
+    };
+  </script>
+
+</body>
+
+</html>

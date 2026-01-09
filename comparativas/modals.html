@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap vs Tailwind - Modals</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      important: '#preview-tw'
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <a href="forms.html" class="nav-btn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+      </svg>
+    </a>
+
+    <div class="header-center">
+      <div class="vs-watermark">VS</div>
+      <span class="side-title bs">Bootstrap</span>
+      <h1 class="main-title">MODALS</h1>
+      <span class="side-title tw">Tailwind</span>
+    </div>
+
+    <a href="alerts.html" class="nav-btn" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+      </svg>
+    </a>
+  </header>
+
+  <div class="main-content">
+    <section class="split-section">
+
+      <div id="preview-bs" class="component-stage" style="transform:none;"></div>
+      <h4 class="explanation">
+        Incluye JS y data-API:<br /> <code>data-bs-toggle</code> + <code>.modal</code>
+      </h4>
+    </section>
+
+    <section class="split-section">
+      <div id="preview-tw" class="component-stage" style="transform:none;"></div>
+      <h4 class="explanation">
+        No trae JS por defecto:<br /> tú manejas mostrar/ocultar
+      </h4>
+    </section>
+  </div>
+
+  <footer>
+    <div class="code-editor-pane">
+      <div id="code-bs" class="editable-code" contenteditable="true" spellcheck="false">
+        &lt;!-- Bot&oacute;n que dispara el modal --&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot;
+        data-bs-target=&quot;#demoModal&quot;&gt;
+        Abrir modal
+        &lt;/button&gt;
+
+        &lt;!-- Modal Bootstrap --&gt;
+        &lt;div class=&quot;modal fade&quot; id=&quot;demoModal&quot; tabindex=&quot;-1&quot;
+        aria-labelledby=&quot;demoModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+        &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h1 class=&quot;modal-title fs-5&quot; id=&quot;demoModalLabel&quot;&gt;Modal Bootstrap&lt;/h1&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot;
+        aria-label=&quot;Cerrar&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+        Esto es un modal con &lt;code&gt;data-bs-toggle&lt;/code&gt; y JS de Bootstrap.
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;
+        data-bs-dismiss=&quot;modal&quot;&gt;Cerrar&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Guardar&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;</div>
+    </div>
+
+    <div class="code-editor-pane" style="border-left: 1px solid #444;">
+      <div id="code-tw" class="editable-code" contenteditable="true" spellcheck="false">
+        &lt;div class=&quot;flex flex-col items-center gap-3&quot;&gt;
+        &lt;button data-tw-open class=&quot;px-5 py-3 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700
+        transition&quot;&gt;
+        Abrir modal
+        &lt;/button&gt;
+
+        &lt;!-- Modal Tailwind (controlado por JS del slide) --&gt;
+        &lt;div data-tw-modal class=&quot;hidden fixed inset-0 z-50 items-center justify-center&quot;&gt;
+        &lt;div data-tw-backdrop class=&quot;absolute inset-0 bg-black/50&quot;&gt;&lt;/div&gt;
+
+        &lt;div class=&quot;relative w-[22rem] rounded-xl bg-white p-6 shadow-xl&quot;&gt;
+        &lt;div class=&quot;flex items-start justify-between gap-3&quot;&gt;
+        &lt;h3 class=&quot;text-xl font-bold text-slate-800&quot;&gt;Modal Tailwind&lt;/h3&gt;
+        &lt;button data-tw-close class=&quot;p-2 rounded hover:bg-slate-100&quot; aria-label=&quot;Cerrar&quot;&gt;
+        ✕
+        &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;p class=&quot;mt-3 text-slate-600&quot;&gt;
+        Tailwind no trae JS: t&uacute; controlas la l&oacute;gica (mostrar/ocultar).
+        &lt;/p&gt;
+
+        &lt;div class=&quot;mt-5 flex justify-end gap-2&quot;&gt;
+        &lt;button data-tw-close class=&quot;px-4 py-2 rounded border border-slate-300 hover:bg-slate-50&quot;&gt;
+        Cerrar
+        &lt;/button&gt;
+        &lt;button class=&quot;px-4 py-2 rounded bg-sky-600 text-white font-semibold hover:bg-sky-700&quot;&gt;
+        Guardar
+        &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;</div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+
+    window.__twModalEscBound = window.__twModalEscBound || false;
+
+    window.afterPreviewUpdate = function () {
+      const root = document.getElementById('preview-tw');
+      if (!root) return;
+
+      const openBtn = root.querySelector('[data-tw-open]');
+      const modal = root.querySelector('[data-tw-modal]');
+      if (!openBtn || !modal) return;
+
+      const open = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+
+      const close = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      openBtn.onclick = open;
+      modal.querySelectorAll('[data-tw-close]').forEach((btn) => (btn.onclick = close));
+
+      const backdrop = modal.querySelector('[data-tw-backdrop]');
+      if (backdrop) backdrop.onclick = close;
+
+      if (!window.__twModalEscBound) {
+        window.addEventListener('keydown', (e) => {
+          if (e.key !== 'Escape') return;
+          const m = document.querySelector('#preview-tw [data-tw-modal]');
+          if (m && !m.classList.contains('hidden')) {
+            m.classList.add('hidden');
+            m.classList.remove('flex');
+          }
+        });
+        window.__twModalEscBound = true;
+      }
+    };
+  </script>
+
+</body>
+
+</html>
